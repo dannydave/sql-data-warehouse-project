@@ -6,7 +6,7 @@ This project presents a full-stack data warehousing and analytics solution — f
 # 🏗️ Data Architecture (Medallion Architecture)
 This project adopts the Medallion Architecture framework, organizing data into three structured layers for efficient processing and analysis:
 
-## 🏗️ Medallion Architecture
+## Medallion Architecture
 
 ![Medallion Architecture](images/medallion_architecture.png)
 
