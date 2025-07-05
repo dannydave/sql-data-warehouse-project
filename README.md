@@ -38,3 +38,30 @@ This repository is ideal for professionals and students aiming to showcase their
 - ETL Pipeline Development  
 - Data Modeling  
 - Data Analytics
+
+# 🚀 Project Requirements
+
+## Building the Data Warehouse (Data Engineering)
+
+**Objective:**  
+Create a modern data warehouse using SQL Server to consolidate sales data, supporting analytical reporting and informed decision-making.
+
+**Specifications:**  
+- **Data Sources:** Import data from two systems (ERP and CRM) available as CSV files.  
+- **Data Quality:** Clean and address data quality issues before analysis.  
+- **Integration:** Merge both data sources into a unified, analysis-ready data model.  
+- **Scope:** Process only the most recent dataset; no need for historical data tracking.  
+- **Documentation:** Provide comprehensive documentation of the data model for business users and analytics teams.
+
+---
+
+## BI: Analytics & Reporting (Data Analysis)
+
+**Objective:**  
+Build SQL-driven analytics to generate insights into:
+
+- Customer Behavior  
+- Product Performance  
+- Sales Trends  
+
+These insights will equip stakeholders with vital metrics for strategic decisions.
