@@ -42,7 +42,12 @@ BEGIN
 
         PRINT '>> Inserting: silver.crm_cust_info';
         INSERT INTO silver.crm_cust_info (
-            cst_id, cst_key, cst_firstname, cst_lastname, cst_marital_status, cst_gndr, cst_create_date
+            cst_id, cst_key, 
+            cst_firstname, 
+            cst_lastname, 
+            cst_marital_status, 
+            cst_gndr, 
+            cst_create_date
         )
         SELECT
             cst_id,
@@ -106,8 +111,15 @@ BEGIN
 
         PRINT '>> Inserting: silver.crm_sales_details';
         INSERT INTO silver.crm_sales_details (
-            sls_ord_num, sls_prd_key, sls_cust_id, sls_order_dt, sls_ship_dt, sls_due_dt,
-            sls_sales, sls_quantity, sls_price
+            sls_ord_num, 
+            sls_prd_key, 
+            sls_cust_id, 
+            sls_order_dt, 
+            sls_ship_dt, 
+            sls_due_dt,
+            sls_sales, 
+            sls_quantity, 
+            sls_price
         )
         SELECT
             sls_ord_num,
