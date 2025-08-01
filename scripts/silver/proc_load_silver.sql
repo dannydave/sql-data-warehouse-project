@@ -125,9 +125,18 @@ BEGIN
             sls_ord_num,
             sls_prd_key,
             sls_cust_id,
-            CASE WHEN sls_order_dt = 0 OR LEN(sls_order_dt) != 8 THEN NULL ELSE CAST(CAST(sls_order_dt AS VARCHAR) AS DATE) END,
-            CASE WHEN sls_ship_dt = 0 OR LEN(sls_ship_dt) != 8 THEN NULL ELSE CAST(CAST(sls_ship_dt AS VARCHAR) AS DATE) END,
-            CASE WHEN sls_due_dt = 0 OR LEN(sls_due_dt) != 8 THEN NULL ELSE CAST(CAST(sls_due_dt AS VARCHAR) AS DATE) END,
+            CASE 
+                WHEN sls_order_dt = 0 OR LEN(sls_order_dt) != 8 THEN NULL 
+                ELSE CAST(CAST(sls_order_dt AS VARCHAR) AS DATE) 
+            END,
+            CASE 
+                WHEN sls_ship_dt = 0 OR LEN(sls_ship_dt) != 8 THEN NULL 
+                ELSE CAST(CAST(sls_ship_dt AS VARCHAR) AS DATE) 
+            END,
+            CASE 
+                WHEN sls_due_dt = 0 OR LEN(sls_due_dt) != 8 THEN NULL 
+                ELSE CAST(CAST(sls_due_dt AS VARCHAR) AS DATE) 
+            END,
             CASE
                 WHEN sls_sales IS NULL OR sls_sales <= 0 OR sls_sales != sls_quantity * ABS(sls_price)
                 THEN sls_quantity * ABS(sls_price)
@@ -158,8 +167,14 @@ BEGIN
         PRINT '>> Inserting: silver.erp_cust_az12';
         INSERT INTO silver.erp_cust_az12 (cid, bdate, gen)
         SELECT
-            CASE WHEN cid LIKE 'NAS%' THEN SUBSTRING(cid, 4, LEN(cid)) ELSE cid END,
-            CASE WHEN bdate > GETDATE() THEN NULL ELSE bdate END,
+            CASE 
+                WHEN cid LIKE 'NAS%' THEN SUBSTRING(cid, 4, LEN(cid)) 
+                ELSE cid 
+            END,
+            CASE 
+                WHEN bdate > GETDATE() THEN NULL 
+                ELSE bdate 
+            END,
             CASE
                 WHEN UPPER(TRIM(gen)) IN ('F', 'FEMALE') THEN 'Female'
                 WHEN UPPER(TRIM(gen)) IN ('M', 'MALE') THEN 'Male'
