@@ -1,3 +1,50 @@
+---
+
+# 🥉 Bronze Layer Table Creation Script
+
+---
+
+## 📋 Overview
+
+This script defines and creates all the necessary tables within the **`bronze` schema** for the Bronze layer of the data warehouse.
+
+---
+
+## 🎯 Purpose
+
+* 🔄 **Drop and recreate:** Ensures tables are dropped if they exist and then recreated for a fresh, consistent schema.
+* 🏗️ **Structure reset:** Use this script to reset or initialize the Bronze layer table structures before loading any data.
+* 📊 **Tables cover:** CRM and ERP source systems, including customer, product, sales, location, and category data.
+
+---
+
+## ⚙️ Table Details
+
+---
+
+### 🧾 CRM Tables
+
+| Table Name          | Description               | Key Columns                  |
+| ------------------- | ------------------------- | ---------------------------- |
+| `crm_cust_info`     | Customer demographic info | `cst_id`, `cst_key`          |
+| `crm_prd_info`      | Product master data       | `prd_id`, `prd_key`          |
+| `crm_sales_details` | Sales transaction details | `sls_ord_num`, `sls_prd_key` |
+
+---
+
+### 🏢 ERP Tables
+
+| Table Name        | Description               | Key Columns           |
+| ----------------- | ------------------------- | --------------------- |
+| `erp_loc_a101`    | Store locations           | `cid`, `cntry`        |
+| `erp_cust_az12`   | ERP Customer demographics | `cid`, `bdate`, `gen` |
+| `erp_px_cat_g1v2` | Product categories        | `id`, `cat`, `subcat` |
+
+---
+
+## 📝 Full Script
+
+```sql
 /*
 ===============================================================================
 DDL Script: Create Bronze Tables
@@ -112,3 +159,6 @@ CREATE TABLE bronze.erp_px_cat_g1v2 (
     maintenance NVARCHAR(50)
 );
 GO
+```
+
+---
