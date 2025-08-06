@@ -77,41 +77,11 @@ This project is perfect for:
 
 ---
 
-## 🚀 Getting Started
+### 🌟 About Me
 
-1. **Clone the repo:**
+Hi! I’m **Daniel Toluwani Adeleke** — a passionate Data Scientist and IT professional with a strong background in Computer Science and Data Science & Business Analytics.  
+I specialize in building end-to-end data solutions, from designing robust data warehouses to crafting insightful analytics that empower data-driven decision-making.
 
-   ```bash
-   git clone <repo-url>
-   ```
+With hands-on experience in SQL, Python, and data modeling, I enjoy sharing knowledge, solving real-world business challenges, and continuously learning innovative ways to turn raw data into valuable insights.
 
-2. **Prepare the environment:**
-
-   * SQL Server instance
-   * Required CSV files in `data/` folder
-
-3. **Run scripts:**
-
-   * Bronze layer DDL and data ingestion
-   * Silver layer transformations
-   * Gold layer views for analytics
-
-4. **Explore analytics:**
-   Use the Gold layer views as your starting point for reports and dashboards.
-
----
-
-## 📖 Documentation & Diagrams
-
-* Data architecture diagrams
-* Data dictionary and schema documentation
-* Sample queries for key business questions
-
-Find all documentation in the `/docs` directory.
-
----
-
-Feel free to open issues or submit PRs for enhancements!
-Happy data building! 💾📊
-
----
+Let’s connect and grow our data skills together!
