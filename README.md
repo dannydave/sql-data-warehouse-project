@@ -1,67 +1,117 @@
-# Data Warehouse and Analytics Project 🚀
-Welcome to the Data Warehouse and Analytics Project repository!
+---
 
-This project presents a full-stack data warehousing and analytics solution — from raw data ingestion to business intelligence reporting. It's designed as a portfolio project to demonstrate core concepts and best practices in data engineering, SQL-based data warehousing, and analytics.
+# 🚀 Data Warehouse & Analytics Project
 
-# 🏗️ Data Architecture
-This project adopts the Medallion Architecture framework, organizing data into three structured layers for efficient processing and analysis:
+Welcome to the **Data Warehouse and Analytics Project** — a comprehensive solution showcasing the full data lifecycle from raw ingestion to actionable business insights.
 
-## Medallion Architecture
-
-![Medallion Architecture](docs/data_architecture.png)
-
-🔹 Bronze Layer
-Raw data is ingested directly from the source systems (CSV files) into the SQL Server database without transformations. This layer serves as the single source of truth and preserves data in its original state.
-
-🔸 Silver Layer
-In this stage, data undergoes cleansing, validation, and standardization. It’s transformed into a more structured and queryable format, ensuring consistency and quality for downstream analytics.
-
-🏅 Gold Layer
-The final layer contains business-ready, aggregated data modeled into a star schema. This layer is optimized for reporting, dashboarding, and generating actionable insights.
-
-## 📖 Project Overview
-
-This project covers the following components:
-
-- **Data Architecture**: Implementation of a modern data warehouse using the Medallion Architecture, structured into Bronze, Silver, and Gold layers.
-- **ETL Pipelines**: Processes for extracting, transforming, and loading data from source systems into the warehouse.
-- **Data Modeling**: Design of fact and dimension tables optimized for analytical workloads.
-- **Analytics & Reporting**: Development of SQL-based reports and dashboards to generate actionable insights.
-
-## 🎯 Target Audience
-
-This repository is ideal for professionals and students aiming to showcase their skills in:
-
-- SQL Development  
-- Data Architecture  
-- Data Engineering  
-- ETL Pipeline Development  
-- Data Modeling  
-- Data Analytics
-
-# 🚀 Project Requirements
-
-## Building the Data Warehouse (Data Engineering)
-
-**Objective:**  
-Create a modern data warehouse using SQL Server to consolidate sales data, supporting analytical reporting and informed decision-making.
-
-**Specifications:**  
-- **Data Sources:** Import data from two systems (ERP and CRM) available as CSV files.  
-- **Data Quality:** Clean and address data quality issues before analysis.  
-- **Integration:** Merge both data sources into a unified, analysis-ready data model.  
-- **Scope:** Process only the most recent dataset; no need for historical data tracking.  
-- **Documentation:** Provide comprehensive documentation of the data model for business users and analytics teams.
+This project is a portfolio-ready demonstration of core data engineering, warehousing, and analytics skills, designed to be easy to understand, reproduce, and extend.
 
 ---
 
-## BI: Analytics & Reporting (Data Analysis)
+## 🏗️ Data Architecture: Medallion Framework
 
-**Objective:**  
-Build SQL-driven analytics to generate insights into:
+This project leverages the popular **Medallion Architecture** to organize data through progressive refinement stages for scalability, quality, and usability.
 
-- Customer Behavior  
-- Product Performance  
-- Sales Trends  
+### Medallion Architecture Layers
 
-These insights will equip stakeholders with vital metrics for strategic decisions.
+![Medallion Architecture](docs/data_architecture.png)
+
+| Layer      | Description                                                                                          |
+| ---------- | ---------------------------------------------------------------------------------------------------- |
+| **Bronze** | Raw data ingested *as-is* from source CSV files into SQL Server. Acts as the single source of truth. |
+| **Silver** | Cleansed and standardized data, ready for reliable querying and integration across datasets.         |
+| **Gold**   | Business-ready, aggregated data modeled in a star schema optimized for analytics and reporting.      |
+
+---
+
+## 📚 Project Overview
+
+This repository delivers:
+
+* **Data Architecture**
+  Design and implementation of a robust data warehouse with Bronze, Silver, and Gold layers.
+
+* **ETL Pipelines**
+  Automated workflows to extract, transform, and load data from ERP and CRM CSV files into the warehouse.
+
+* **Data Modeling**
+  Creation of dimension and fact tables for analytical workloads, following best practices.
+
+* **Analytics & Reporting**
+  SQL views and queries to generate actionable insights on customers, products, and sales trends.
+
+---
+
+## 🎯 Who Is This For?
+
+This project is perfect for:
+
+* Data engineers wanting to demonstrate practical SQL and data warehousing skills.
+* Data analysts learning to build structured, clean datasets for reporting.
+* Students and professionals preparing portfolios that highlight end-to-end data solutions.
+
+---
+
+## ⚙️ Project Requirements & Objectives
+
+### Data Engineering: Building the Data Warehouse
+
+* **Goal:** Create a SQL Server-based modern data warehouse consolidating sales and customer data.
+* **Data Sources:** Import ERP and CRM datasets from CSV files.
+* **Quality:** Implement cleansing and validation to ensure data integrity.
+* **Integration:** Merge sources into a unified, query-optimized model (star schema).
+* **Scope:** Focus on the latest dataset only; no historical tracking required.
+* **Documentation:** Deliver clear data model documentation for business and analytics teams.
+
+---
+
+### Business Intelligence: Analytics & Reporting
+
+* **Goal:** Develop SQL-based analytics to uncover insights on:
+
+  * Customer behavior patterns
+  * Product performance metrics
+  * Sales trends and KPIs
+
+* **Outcome:** Empower stakeholders with reliable data for strategic decisions.
+
+---
+
+## 🚀 Getting Started
+
+1. **Clone the repo:**
+
+   ```bash
+   git clone <repo-url>
+   ```
+
+2. **Prepare the environment:**
+
+   * SQL Server instance
+   * Required CSV files in `data/` folder
+
+3. **Run scripts:**
+
+   * Bronze layer DDL and data ingestion
+   * Silver layer transformations
+   * Gold layer views for analytics
+
+4. **Explore analytics:**
+   Use the Gold layer views as your starting point for reports and dashboards.
+
+---
+
+## 📖 Documentation & Diagrams
+
+* Data architecture diagrams
+* Data dictionary and schema documentation
+* Sample queries for key business questions
+
+Find all documentation in the `/docs` directory.
+
+---
+
+Feel free to open issues or submit PRs for enhancements!
+Happy data building! 💾📊
+
+---
