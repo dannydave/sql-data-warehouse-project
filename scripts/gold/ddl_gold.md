@@ -1,3 +1,56 @@
+---
+
+# 🏆 Gold Layer Views Creation Script
+
+---
+
+## 📋 Overview
+
+This script creates **views** in the **Gold layer** of the data warehouse. The Gold layer represents the **final, business-ready datasets** modeled in a **Star Schema** format with clear dimensions and facts.
+
+---
+
+## 🎯 Purpose
+
+* ✨ **Transform and enrich:** Apply transformations and join Silver layer data to produce clean, consolidated views.
+* 📊 **Star Schema:** Dimension views (`dim_customers`, `dim_products`) and fact views (`fact_sales`) ready for analytics.
+* 🎯 **Single source for reporting:** These views are designed for direct querying by BI tools, dashboards, or analysts.
+
+---
+
+## ⚙️ View Details
+
+---
+
+### 👥 `gold.dim_customers`
+
+* Combines customer information from CRM and ERP sources.
+* Creates a surrogate key `customer_key`.
+* Uses CRM gender data primarily, with ERP gender as fallback.
+* Includes demographic details like name, country, marital status, and birthdate.
+
+---
+
+### 📦 `gold.dim_products`
+
+* Combines product master data from CRM with ERP product categories.
+* Surrogate key `product_key` is generated.
+* Filters out inactive or historical products (`prd_end_dt IS NULL`).
+* Includes product name, category, subcategory, maintenance info, cost, and product line.
+
+---
+
+### 💰 `gold.fact_sales`
+
+* Fact view linking sales details to customer and product dimension keys.
+* Contains key sales metrics: sales amount, quantity, price, and important dates (order, shipping, due).
+* Joins sales data with dimensions for meaningful analysis.
+
+---
+
+## 📝 Full Script
+
+```sql
 /*
 ===============================================================================
 DDL Script: Create Gold Views
@@ -99,3 +152,6 @@ LEFT JOIN gold.dim_products pr
 LEFT JOIN gold.dim_customers cu
     ON sd.sls_cust_id = cu.customer_id;
 GO
+```
+
+---
