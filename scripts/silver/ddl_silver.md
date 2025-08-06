@@ -1,3 +1,26 @@
+````markdown
+# 📦 DDL Script: Create Silver Tables
+
+This script defines and creates all required tables under the `silver` schema in the **DataWarehouse**.  
+It ensures any existing versions are dropped first to support schema resets or full reinitialization.
+
+> ⚠️ **Warning**  
+> Running this script will permanently drop and recreate all tables in the `silver` schema.  
+> Ensure any important data is backed up prior to execution.
+
+---
+
+## 📑 Purpose
+
+- Set up **clean and auditable** tables for the Silver layer.
+- Standardize column naming, include technical metadata (`dwh_create_date`).
+- Align with ETL architecture where Silver tables serve as **refined staging** for the Gold layer.
+
+---
+
+## 🛠️ SQL Script
+
+```sql
 /*
 ===============================================================================
 DDL Script: Create Silver Tables
@@ -118,3 +141,19 @@ CREATE TABLE silver.erp_px_cat_g1v2 (
     dwh_create_date DATETIME2 DEFAULT GETDATE()
 );
 GO
+```
+
+---
+
+## 📂 Tables Created
+
+| Table Name                    | Description                                 |
+|------------------------------|---------------------------------------------|
+| `silver.crm_cust_info`       | Customer info from CRM system               |
+| `silver.crm_prd_info`        | Product info from CRM system                |
+| `silver.crm_sales_details`   | Sales transactions from CRM                 |
+| `silver.erp_loc_a101`        | Customer location data from ERP             |
+| `silver.erp_cust_az12`       | Demographics data from ERP                  |
+| `silver.erp_px_cat_g1v2`     | Product category hierarchy from ERP         |
+
+---
