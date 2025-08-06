@@ -1,22 +1,11 @@
-/*
-===============================================================================
-Stored Procedure: Load Silver Layer (Bronze -> Silver)
-===============================================================================
-Purpose:
-    Perform ETL to populate 'silver' schema tables from 'bronze' schema.
+# 🛠️ Stored Procedure: `silver.load_silver`
 
-Actions:
-    - Truncate Silver tables
-    - Insert transformed and cleansed data from Bronze tables
+This stored procedure performs ETL from the **Bronze** to **Silver** layer in a Data Warehouse.  
+It applies transformations, cleanses data, and ensures schema alignment with `silver` tables.
 
-Parameters:
-    None
 
-Usage:
-    EXEC silver.load_silver;
-===============================================================================
-*/
 
+sql_code = """
 CREATE OR ALTER PROCEDURE silver.load_silver AS
 BEGIN
     DECLARE @start_time DATETIME, @end_time DATETIME, @batch_start_time DATETIME, @batch_end_time DATETIME;
@@ -236,7 +225,118 @@ BEGIN
         PRINT 'Error State : ' + CAST(ERROR_STATE() AS NVARCHAR);
         PRINT '================================================';
     END CATCH
-END
+---
 
--- Execute the procedure
+## 📌 Summary
+
+- **Schema**: `silver`
+- **Object Type**: Stored Procedure
+- **Name**: `load_silver`
+- **Input Parameters**: _None_
+- **Usage**:  
+  ```sql
+  EXEC silver.load_silver;
+  ```
+
+---
+
+## 📑 Purpose
+
+- **Reset** all silver-layer tables via `TRUNCATE`.
+- **Load** fresh, cleansed, and transformed data from the `bronze` layer.
+- **Standardize** data using trimming, case normalization, null handling, and derived fields.
+
+---
+
+## 🔁 ETL Process Steps
+
+### 1. CRM Tables
+
+#### 🧾 `silver.crm_cust_info`
+- **Transforms**:
+  - Keep latest customer record (ROW_NUMBER by `cst_id`).
+  - Standardize `marital_status` and `gender`.
+  - Trim `firstname` and `lastname`.
+
+#### 📦 `silver.crm_prd_info`
+- **Transforms**:
+  - Parse and split `prd_key`.
+  - Map product line codes (e.g. `M`, `R`) to readable values.
+  - Derive `prd_end_dt` using `LEAD()` function.
+
+#### 💸 `silver.crm_sales_details`
+- **Transforms**:
+  - Handle invalid date formats.
+  - Derive `sls_sales` if missing or inconsistent.
+  - Derive `sls_price` if missing using back-calculation.
+
+---
+
+### 2. ERP Tables
+
+#### 👥 `silver.erp_cust_az12`
+- **Transforms**:
+  - Strip `"NAS"` prefix from `cid`.
+  - Remove invalid future `bdate`.
+  - Standardize gender values.
+
+#### 🌍 `silver.erp_loc_a101`
+- **Transforms**:
+  - Remove hyphens from `cid`.
+  - Map country codes to full names (e.g. `DE` → Germany, `US` → United States).
+
+#### 🛒 `silver.erp_px_cat_g1v2`
+- **Direct Copy** (No transformations)
+
+---
+
+## 🧪 Error Handling
+
+- Wrapped in `TRY...CATCH` block.
+- On error:
+  - Logs message, error number, and error state using `PRINT`.
+
+---
+
+## 🕒 Auditing and Monitoring
+
+- Logs:
+  - Start and end of each table load.
+  - Duration (in seconds) of each load step.
+  - Total batch duration.
+
+---
+
+## 📜 Full SQL Script
+
+> You can execute or schedule this script using SQL Agent or orchestration tools.
+
+<details>
+<summary>Click to expand SQL</summary>
+
+```sql
+-- Script available in your SQL environment
 EXEC silver.load_silver;
+```
+
+</details>
+
+---
+
+## 📌 Notes
+
+- Assumes `bronze` tables are populated and accessible.
+- Assumes Silver schema and tables already exist.  
+  If not, refer to the [Create Silver Tables Script](#).
+- All inserts exclude `dwh_create_date`, which defaults via column definition (`GETDATE()`).
+
+---
+
+## ✅ Example Usage
+
+```sql
+-- Refresh Silver Layer
+EXEC silver.load_silver;
+```
+
+---
