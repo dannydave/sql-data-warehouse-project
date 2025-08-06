@@ -85,3 +85,10 @@ I specialize in building end-to-end data solutions, from designing robust data w
 With hands-on experience in SQL, Python, and data modeling, I enjoy sharing knowledge, solving real-world business challenges, and continuously learning innovative ways to turn raw data into valuable insights.
 
 Let’s connect and grow our data skills together!
+
+### 🙏 Acknowledgements
+
+This project is based on the excellent work and tutorials by **Baraa Khatib Salkini** (Data With Baraa).  
+I’ve learned a lot from his resources and adapted this project to enhance my skills in data warehousing and analytics.  
+Check out his content for more great learning materials:  
+[YouTube Channel](https://www.youtube.com/@DataWithBaraa) | [GitHub](https://github.com/DataWithBaraa)
