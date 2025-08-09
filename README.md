@@ -1,87 +1,85 @@
----
-
 # 🚀 Data Warehouse & Analytics Project
 
-Welcome to the **Data Warehouse and Analytics Project** — a comprehensive solution showcasing the full data lifecycle from raw ingestion to actionable business insights.
+[![Author](https://img.shields.io/badge/Author-dannydave-blue)](https://github.com/dannydave)
+[![SQL Server](https://img.shields.io/badge/SQL%20Server-%23CC2927.svg?&logo=microsoft-sql-server&logoColor=white)](https://www.microsoft.com/en-us/sql-server)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-This project is a portfolio-ready demonstration of core data engineering, warehousing, and analytics skills, designed to be easy to understand, reproduce, and extend.
+A **portfolio-ready** demonstration of the **end-to-end data lifecycle** — from raw data ingestion to actionable business insights — using a modern **Medallion Architecture**.  
+This project highlights **data engineering, warehousing, and analytics** best practices while remaining **easy to understand, reproduce, and extend**.
 
 ---
 
 ## 🏗️ Data Architecture: Medallion Framework
 
-This project leverages the popular **Medallion Architecture** to organize data through progressive refinement stages for scalability, quality, and usability.
+This project adopts the **Medallion Architecture** to deliver a scalable, maintainable, and quality-focused data flow.
 
-### Medallion Architecture Layers
-
-![Medallion Architecture](docs/data_architecture.png)
+### Layers
 
 | Layer      | Description                                                                                          |
 | ---------- | ---------------------------------------------------------------------------------------------------- |
-| **Bronze** | Raw data ingested *as-is* from source CSV files into SQL Server. Acts as the single source of truth. |
-| **Silver** | Cleansed and standardized data, ready for reliable querying and integration across datasets.         |
-| **Gold**   | Business-ready, aggregated data modeled in a star schema optimized for analytics and reporting.      |
+| **Bronze** | Raw data ingested *as-is* from ERP & CRM CSV files into SQL Server — acts as the single source of truth. |
+| **Silver** | Cleansed and standardized data, ensuring consistent formatting and integrity.                         |
+| **Gold**   | Business-ready, aggregated data modeled in a **star schema** optimized for analytics & reporting.     |
+
+![Medallion Architecture](docs/data_architecture.png)
 
 ---
 
-## 📚 Project Overview
+## 📚 Project Features
 
-This repository delivers:
-
-* **Data Architecture**
-  Design and implementation of a robust data warehouse with Bronze, Silver, and Gold layers.
-
-* **ETL Pipelines**
-  Automated workflows to extract, transform, and load data from ERP and CRM CSV files into the warehouse.
-
-* **Data Modeling**
-  Creation of dimension and fact tables for analytical workloads, following best practices.
-
-* **Analytics & Reporting**
-  SQL views and queries to generate actionable insights on customers, products, and sales trends.
+- **Data Architecture** — Robust Bronze → Silver → Gold warehouse design.
+- **ETL Pipelines** — Automated CSV ingestion and transformation in SQL Server.
+- **Data Modeling** — Fact & dimension tables following BI best practices.
+- **Analytics & Reporting** — SQL-based insights on customers, products, and sales KPIs.
 
 ---
 
-## 🎯 Who Is This For?
+## 🎯 Who This Project Is For
 
-This project is perfect for:
-
-* Data engineers wanting to demonstrate practical SQL and data warehousing skills.
-* Data analysts learning to build structured, clean datasets for reporting.
-* Students and professionals preparing portfolios that highlight end-to-end data solutions.
+✅ Data Engineers showcasing SQL & warehouse design skills  
+✅ Data Analysts building structured datasets for BI  
+✅ Students & professionals creating portfolio-ready projects  
 
 ---
 
-## ⚙️ Project Requirements & Objectives
+## ⚙️ Technical Details
 
-### Data Engineering: Building the Data Warehouse
+**Data Sources:**  
+- ERP System (Products, Sales) — CSV export  
+- CRM System (Customers) — CSV export  
 
-* **Goal:** Create a SQL Server-based modern data warehouse consolidating sales and customer data.
-* **Data Sources:** Import ERP and CRM datasets from CSV files.
-* **Quality:** Implement cleansing and validation to ensure data integrity.
-* **Integration:** Merge sources into a unified, query-optimized model (star schema).
-* **Scope:** Focus on the latest dataset only; no historical tracking required.
-* **Documentation:** Deliver clear data model documentation for business and analytics teams.
+**Tech Stack:**  
+- Microsoft SQL Server  
+- T-SQL for ETL, transformations, and reporting  
+- Star schema modeling principles  
 
----
-
-### Business Intelligence: Analytics & Reporting
-
-* **Goal:** Develop SQL-based analytics to uncover insights on:
-
-  * Customer behavior patterns
-  * Product performance metrics
-  * Sales trends and KPIs
-
-* **Outcome:** Empower stakeholders with reliable data for strategic decisions.
+**Objectives:**  
+1. Consolidate sales & customer data in a SQL Server warehouse  
+2. Cleanse and validate source data for quality  
+3. Integrate sources into a unified, query-optimized model  
+4. Build analytics queries to deliver actionable insights  
 
 ---
 
-### 🌟 About Me
+## 🚀 Quick Start
 
-Hi! I’m **Daniel Toluwani Adeleke** — a passionate Data Scientist and IT professional with a strong background in Computer Science and Data Science & Business Analytics.  
-I specialize in building end-to-end data solutions, from designing robust data warehouses to crafting insightful analytics that empower data-driven decision-making.
+**Prerequisites**
+- [SQL Server](https://www.microsoft.com/en-us/sql-server) installed locally or on a server
+- Basic knowledge of T-SQL
+- ERP & CRM CSV files (sample files included in `data/`)
 
-With hands-on experience in SQL, Python, and data modeling, I enjoy sharing knowledge, solving real-world business challenges, and continuously learning innovative ways to turn raw data into valuable insights.
+## 📜 License
 
-Let’s connect and grow our data skills together!
+MIT — see the [LICENSE](LICENSE) file.
+
+---
+
+## 🌟 About Me
+
+I’m **Daniel Toluwani Adeleke**, a Data Scientist & IT professional with a passion for building **end-to-end data solutions**.
+I hold a **BSc in Computer Science** and an **MSc in Data Science & Business Analytics**. My expertise includes SQL, Python, Machine Learning, and BI reporting.
+
+📧 **Email:** [dannydave1000@gmail.com](mailto:dannydave1000@gmail.com)
+💼 **LinkedIn:** [linkedin.com/in/dannydave](https://www.linkedin.com/in/leke98)
+🌐 **Portfolio:** [dannydave.my_portfolio.github.io](https://dannydave.github.io/my_portfolio.github.io/)
+
