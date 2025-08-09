@@ -66,7 +66,7 @@ This project adopts the **Medallion Architecture** to deliver a scalable, mainta
 **Prerequisites**
 - [SQL Server](https://www.microsoft.com/en-us/sql-server) installed locally or on a server
 - Basic knowledge of T-SQL
-- ERP & CRM CSV files (sample files included in `data/`)
+- ERP & CRM CSV files (sample files included in `datasets/`)
 
 ## 📜 License
 
