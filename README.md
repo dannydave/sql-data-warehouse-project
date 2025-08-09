@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![GitHub last commit](https://img.shields.io/github/last-commit/dannydave/sql-data-warehouse-project?color=blue)
 ![GitHub repo size](https://img.shields.io/github/repo-size/dannydave/sql-data-warehouse-project?color=green)
-![GitHub license](https://img.shields.io/github/license/dannydave/sql-data-warehouse-project?color=orange)
+
 
 A **portfolio-ready** demonstration of the **end-to-end data lifecycle** — from raw data ingestion to actionable business insights — using a modern **Medallion Architecture**.  
 This project highlights **data engineering, warehousing, and analytics** best practices while remaining **easy to understand, reproduce, and extend**.
